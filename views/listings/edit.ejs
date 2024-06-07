@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <h2>Edit listing</h2>
+    <div class="row">
+       <div class="col-8 offset-2">
+        <form method="POST" action="/listings/<%=requiredList._id%>?_method=PUT">
+            <div class="mb-3">
+                 <label for="title" class="form-label">title</label>
+                <input type="text"  class="form-control" name="listing[title]" value="<%=requiredList.title%>">
+            </div>
+          
+            <div class="mb-3">
+                <label for="description" class="form-label">description</label>
+                <textarea name="listing[description]" class="form-control" >
+                    <%=requiredList.description%>
+                  </textarea> 
+            </div>
+           <div class="mb-3">
+            <label for="image" class="form-label">image</label>
+            <input type="text" value="<%=requiredList.image%>" name="listing[image]" class="form-control" >
+           </div>
+         
+           <div class="mb-3">
+            <label for="country" class="form-label">prize:</label>
+         <input type="number" name="listing[prize]" value="<%=requiredList.prize%>" class="form-control"   >
+           </div>
+    
+           <div class="mb-3">
+            <label for="country" class="form-label">country:</label>
+            <input type="text" name="listing[country]" value="<%=requiredList.country%>" class="form-control" >
+         </div>
+    
+         <div class="mb-3">
+            <label for="location" class="form-label">location:</label>
+            <input type="text" name="listing[location]" value="<%=requiredList.location%>" class="form-control" >
+         </div> 
+          <button class="btn btn-dark edit-btn">Save list</button>
+        </form>
+       </div>
+    </div>
+</body>
